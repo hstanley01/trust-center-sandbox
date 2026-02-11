@@ -1,0 +1,6 @@
+backend/
+supabase/
+scripts/
+.git/
+*.md
+docker-compose.yml
