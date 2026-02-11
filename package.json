@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "cd frontend && npm install && npm run dev",
-    "build": "cd frontend && npm install && npm run build",
-    "start": "cd frontend && npm start",
-    "lint": "cd frontend && npm run lint"
+    "dev": "pnpm --filter frontend dev",
+    "build": "pnpm --filter frontend build",
+    "start": "pnpm --filter frontend start",
+    "lint": "pnpm --filter frontend lint"
   },
   "engines": {
     "node": ">=18.0.0"
