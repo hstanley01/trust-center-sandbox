@@ -1,0 +1,23 @@
+{
+  "name": "trust-center-sandbox",
+  "version": "1.0.0",
+  "description": "Trust Center Application with Security & Compliance Documentation",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "start": "npm run start --prefix frontend"
+  },
+  "keywords": [
+    "trust-center",
+    "security",
+    "compliance",
+    "documentation"
+  ],
+  "author": "Trust Center Team",
+  "license": "MIT"
+}
