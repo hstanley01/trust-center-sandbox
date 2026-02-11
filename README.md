@@ -1,6 +1,8 @@
 # Trust Center
 
-An open-source security trust center platform. Built with Next.js 15, Docker, and Supabase, featuring organization-level document approval, magic link access, and comprehensive admin management
+An open-source security trust center platform. Built with Next.js 15 and Supabase, featuring organization-level document approval, magic link access, and comprehensive admin management.
+
+**🚀 Now deployable to Vercel!** The application has been migrated from a Docker-based dual-service architecture to a unified Next.js application. See [MIGRATION.md](MIGRATION.md) for details.
 
 ## Features
 
@@ -15,13 +17,13 @@ An open-source security trust center platform. Built with Next.js 15, Docker, an
 
 ## Tech Stack
 
-- **Frontend**: Next.js 15 (App Router), React 19, TypeScript, TailwindCSS
-- **Backend**: Node.js with Express, TypeScript
+- **Framework**: Next.js 15 (App Router + API Routes), React 19, TypeScript
+- **Styling**: TailwindCSS, shadcn/ui components
 - **Database**: PostgreSQL (via Supabase)
 - **Auth**: Supabase Auth (admin-only), Magic links for document access
 - **Storage**: Supabase Storage
-- **Containerization**: Docker + Docker Compose
-- **Email**: Resend API (production) / Mailpit (development) for secure email delivery with attachments
+- **Deployment**: Vercel (recommended) or Docker
+- **Email**: Resend API (production) / Mailpit (development) for secure email delivery
 
 ## Prerequisites
 
@@ -30,6 +32,31 @@ An open-source security trust center platform. Built with Next.js 15, Docker, an
 - Git
 
 ## Quick Start
+
+### Option 1: Deploy to Vercel (Recommended)
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/kutcode/trust-center.git
+   cd trust-center
+   ```
+
+2. **Setup Supabase Cloud**
+   - Create account at [supabase.com](https://supabase.com)
+   - Create a new project
+   - Run migrations from `supabase/migrations/` in SQL Editor
+   - Create a storage bucket named `documents`
+
+3. **Deploy to Vercel**
+   - Push code to GitHub
+   - Import project at [vercel.com](https://vercel.com)
+   - Set Root Directory to `frontend`
+   - Add environment variables (see Migration Guide)
+   - Deploy!
+
+See [MIGRATION.md](MIGRATION.md) for complete deployment instructions.
+
+### Option 2: Local Development with Docker
 
 1. **Clone the repository**
    ```bash
@@ -59,6 +86,28 @@ An open-source security trust center platform. Built with Next.js 15, Docker, an
    - Backend API: http://localhost:4000
    - Supabase Studio: http://localhost:54323
    - Mailpit (email testing): http://localhost:8025
+
+### Option 3: Local Development (No Docker)
+
+1. **Clone and setup**
+   ```bash
+   git clone https://github.com/kutcode/trust-center.git
+   cd trust-center/frontend
+   npm install
+   ```
+
+2. **Configure environment**
+   ```bash
+   cp .env.example .env.local
+   # Add your Supabase Cloud credentials
+   ```
+
+3. **Run development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Access at http://localhost:3000**
 
 ## Email Configuration
 
